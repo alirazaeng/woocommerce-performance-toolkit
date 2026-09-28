@@ -1,0 +1,45 @@
+name: Optimization proposal
+description: Propose a measured WooCommerce performance improvement
+title: "[Optimization]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: bottleneck
+    attributes:
+      label: Bottleneck
+      description: What measurable problem are you trying to solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include metrics, traces, request waterfalls, query data, or reproducible observations.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe the smallest change that addresses the root cause.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Compatibility / regression risks
+      description: Note cart, checkout, account, payment, caching, theme, or extension risks.
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: Explain how you will prove the change helps without breaking commerce flows.
+    validations:
+      required: true
