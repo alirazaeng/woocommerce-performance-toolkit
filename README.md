@@ -36,6 +36,12 @@ woocommerce-performance-toolkit/
 ├── LICENSE
 ├── SECURITY.md
 ├── .gitignore
+├── assets/
+│   └── case-studies/
+├── case-studies/
+│   ├── ali-raza-solutions-performance.md
+│   ├── ahf-collection-performance.md
+│   └── measured-wordpress-performance.md
 ├── docs/
 │   ├── audit-checklist.md
 │   ├── core-web-vitals.md
@@ -134,18 +140,62 @@ If you turn a pattern into a production plugin, namespace it, add lifecycle hand
 6. **Database** — slow queries, autoloaded options, transients, scheduled actions, oversized metadata.
 7. **Regression testing** — cart, checkout, account, payment, search, filters, analytics.
 
-## Measured case study
+## Measured performance results
 
-A real before/after WordPress performance verification is included alongside the WooCommerce-specific guidance:
+The repository includes real screenshot-backed performance evidence rather than headline scores without context.
+
+### Ali Raza Solutions — matched before/after
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| GTmetrix Grade | E | A |
+| Performance | 33% | 92% |
+| Structure | 87% | 98% |
+| LCP | 7.6 s | 1.3 s |
+| TBT | 543 ms | 25 ms |
+| CLS | 0.04 | 0 |
+
+Both captures show the same production domain, Seattle test location, Chrome 154, and Lighthouse 12.6.1.
+
+<p>
+  <img src="assets/case-studies/ali-raza-solutions-before.webp" alt="Ali Raza Solutions GTmetrix before result: Grade E, 33 percent performance, 7.6 second LCP" width="49%">
+  <img src="assets/case-studies/ali-raza-solutions-after.webp" alt="Ali Raza Solutions GTmetrix after result: Grade A, 92 percent performance, 1.3 second LCP" width="49%">
+</p>
+
+[Read the Ali Raza Solutions case study →](case-studies/ali-raza-solutions-performance.md)
+
+### AHF Collection — WooCommerce improvement
+
+| Metric | Earlier capture | Later capture |
+| --- | ---: | ---: |
+| GTmetrix Grade | D | B |
+| Performance | 55% | 82% |
+| Structure | 81% | 88% |
+| LCP | 7.9 s | 2.0 s |
+| TBT | 58 ms | 35 ms |
+| CLS | 0.01 | 0 |
+
+The AHF screenshots use the same Seattle location and Chrome/Lighthouse generation, but the earlier capture uses `www.ahfcollection.com` while the later capture uses `ahfcollection.com`. It is therefore presented as a documented site improvement rather than a perfectly controlled benchmark.
+
+<p>
+  <img src="assets/case-studies/ahf-collection-before.webp" alt="AHF Collection earlier GTmetrix result: Grade D, 55 percent performance, 7.9 second LCP" width="49%">
+  <img src="assets/case-studies/ahf-collection-after.webp" alt="AHF Collection later GTmetrix result: Grade B, 82 percent performance, 2.0 second LCP" width="49%">
+</p>
+
+[Read the AHF Collection case study →](case-studies/ahf-collection-performance.md)
+
+### Additional historical benchmark
+
+An earlier WordPress benchmark remains available for historical context:
 
 - **GTmetrix Grade:** C → A
 - **Performance:** 59% → 87%
 - **LCP:** 5.7 s → 1.5 s
 - **Structure:** 96% → 98%
 
-The case study also reports the TBT and CLS regressions instead of hiding them, and it clearly distinguishes verified measurements from undocumented implementation details.
+That report also records TBT and CLS regressions rather than hiding them and does not claim undocumented implementation details.
 
-[Read the measured performance case study →](case-studies/measured-wordpress-performance.md)
+[Read the additional measured benchmark →](case-studies/measured-wordpress-performance.md)
 
 ## Files worth starting with
 
@@ -153,6 +203,8 @@ The case study also reports the TBT and CLS regressions instead of hiding them, 
 - [Core Web Vitals guide](docs/core-web-vitals.md)
 - [Caching strategy](docs/caching-strategy.md)
 - [Troubleshooting playbook](docs/troubleshooting.md)
+- [Ali Raza Solutions measured case study](case-studies/ali-raza-solutions-performance.md)
+- [AHF Collection WooCommerce case study](case-studies/ahf-collection-performance.md)
 - [Implementation notes](examples/implementation-notes.md)
 - [Case-study template](examples/before-after-case-study.md)
 
