@@ -1,0 +1,36 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+*.log
+
+# Dependencies / build output
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+
+# WordPress runtime / generated content
+wp-content/cache/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backups/
+wp-content/ai1wm-backups/
+wp-content/debug.log
+
+# Credentials / private exports
+*.sql
+*.sql.gz
+*.pem
+*.key
+auth.json
+composer-auth.json
