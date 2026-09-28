@@ -8,6 +8,7 @@ The project follows a simple human-readable changelog rather than claiming seman
 
 ### Added
 
+- measured WordPress performance case study with verified GTmetrix before/after results
 - WooCommerce performance audit checklist
 - Core Web Vitals guidance
 - WooCommerce-aware caching strategy
