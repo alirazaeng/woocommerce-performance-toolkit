@@ -134,6 +134,19 @@ If you turn a pattern into a production plugin, namespace it, add lifecycle hand
 6. **Database** — slow queries, autoloaded options, transients, scheduled actions, oversized metadata.
 7. **Regression testing** — cart, checkout, account, payment, search, filters, analytics.
 
+## Measured case study
+
+A real before/after WordPress performance verification is included alongside the WooCommerce-specific guidance:
+
+- **GTmetrix Grade:** C → A
+- **Performance:** 59% → 87%
+- **LCP:** 5.7 s → 1.5 s
+- **Structure:** 96% → 98%
+
+The case study also reports the TBT and CLS regressions instead of hiding them, and it clearly distinguishes verified measurements from undocumented implementation details.
+
+[Read the measured performance case study →](case-studies/measured-wordpress-performance.md)
+
 ## Files worth starting with
 
 - [Audit checklist](docs/audit-checklist.md)
