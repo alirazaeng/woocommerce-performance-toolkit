@@ -1,0 +1,20 @@
+{
+  "name": "alirazaeng/woocommerce-performance-toolkit",
+  "description": "Production-focused WooCommerce performance optimization patterns and diagnostics.",
+  "type": "project",
+  "license": "MIT",
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "squizlabs/php_codesniffer": "^3.10",
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "scripts": {
+    "lint": "phpcs --standard=phpcs.xml.dist php"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

@@ -24,7 +24,7 @@ function arwpt_prioritize_verified_lcp_image( $attr, $attachment, $size ) {
 		return $attr;
 	}
 
-	if ( empty( $attachment->ID ) || (int) $attachment->ID !== (int) ARWPT_LCP_ATTACHMENT_ID ) {
+	if ( empty( $attachment->ID ) || (int) ARWPT_LCP_ATTACHMENT_ID !== (int) $attachment->ID ) {
 		return $attr;
 	}
 

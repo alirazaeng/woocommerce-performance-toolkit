@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible problem in code or documentation
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please avoid posting credentials, private client URLs, customer data, or other sensitive information.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is happening?
+      placeholder: Describe the issue clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable reproduction.
+      placeholder: |
+        1. Use...
+        2. Visit...
+        3. Trigger...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: input
+    id: wordpress
+    attributes:
+      label: WordPress version
+      placeholder: e.g. 6.x
+
+  - type: input
+    id: woocommerce
+    attributes:
+      label: WooCommerce version
+      placeholder: e.g. 10.x
+
+  - type: input
+    id: php
+    attributes:
+      label: PHP version
+      placeholder: e.g. 8.2
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Include relevant theme/plugin/cache details without exposing secrets.

@@ -22,6 +22,7 @@ function arwpt_get_largest_autoloaded_options( $limit = 20 ) {
 
 	$limit = max( 1, min( 100, absint( $limit ) ) );
 
+	// Table name comes from WordPress; the row limit is prepared as an integer placeholder.
 	// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 	$sql = $wpdb->prepare(
 		"SELECT option_name, LENGTH(option_value) AS bytes
@@ -32,7 +33,7 @@ function arwpt_get_largest_autoloaded_options( $limit = 20 ) {
 		$limit
 	);
 
-	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+	// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 	return $wpdb->get_results( $sql, ARRAY_A );
 }
 
