@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented here.
 
-The project follows a simple human-readable changelog rather than claiming semantic version guarantees before the toolkit reaches its first tagged release.
-
-## Unreleased
+## [1.0.0] - 2026-09-30
 
 ### Added
 
-- measured WordPress performance case study with verified GTmetrix before/after results
-- WooCommerce performance audit checklist
-- Core Web Vitals guidance
+- production-focused WooCommerce performance audit checklist
+- Core Web Vitals diagnosis and remediation guidance
 - WooCommerce-aware caching strategy
 - troubleshooting playbook
 - safe PHP optimization examples
 - frontend JavaScript performance patterns
 - layout-stability CSS patterns
 - database diagnostic helpers
-- implementation-notes template
-- before/after case-study template
-- security guidance
-- MIT license
-- WordPress Coding Standards configuration
-- GitHub Actions PHP code-quality workflow
-- contribution guide
-- pull request template
-- structured issue templates
+- implementation-notes and before/after case-study templates
+- WordPress Coding Standards configuration and GitHub Actions code-quality workflow
+- contribution, security, pull-request, and issue-template guidance
+- screenshot-backed Ali Raza Solutions performance case study
+- screenshot-backed AHF Collection WooCommerce performance case study
+- additional historical measured WordPress benchmark
+
+### Release notes
+
+This is the first tagged stable portfolio release of the toolkit. It packages the auditing methodology, implementation patterns, regression guidance, and measured case-study evidence that are already validated on `main`.
