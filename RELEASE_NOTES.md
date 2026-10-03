@@ -24,13 +24,15 @@ First stable release of the production-focused WooCommerce performance toolkit.
 
 ### AHF Collection
 
-- GTmetrix Grade: **D → B**
-- Performance: **55% → 82%**
-- LCP: **7.9s → 2.0s**
-- TBT: **58ms → 35ms**
-- CLS: **0.01 → 0**
+- GTmetrix Grade: **E → A**
+- Performance: **41% → 99%**
+- Structure: **85% → 98%**
+- LCP: **10.4s → 0.76s**
+- TBT: **346–544ms → 76ms**
+- CLS: **0 → 0**
+- PageSpeed desktop: **100**
 
-The AHF case study documents the hostname difference between its earlier and later captures instead of presenting it as a perfectly controlled benchmark.
+These figures reflect the later confirmed optimization run measured on **2 Oct 2026**. Earlier D → B screenshots remain in the case study as historical evidence, but they are no longer the latest reported result.
 
 ## Usage
 

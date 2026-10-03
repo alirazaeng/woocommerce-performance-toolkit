@@ -41,6 +41,22 @@ The optimization target was therefore broader than a single score:
 | **Total Blocking Time** | 543ms | 25ms | **518ms lower** |
 | **Cumulative Layout Shift** | 0.04 | 0 | **0.04 lower** |
 
+### PageSpeed Insights retest — 3 Oct 2026 (Lighthouse 13.5)
+
+| Metric | Mobile (Moto G Power, Slow 4G) | Desktop |
+| --- | ---: | ---: |
+| **Performance** | **98** | **100** |
+| **FCP** | **1.2s** | **0.4s** |
+| **LCP** | **2.0s** | **0.6s** |
+| **TBT** | **0ms** | **0ms** |
+| **CLS** | **0.007** | **0** |
+
+Accessibility, Best Practices and SEO: **100 on both**. Lab data; no CrUX field data yet (low traffic). [Live report](https://pagespeed.web.dev/analysis/https-alirazasolutions-com/uz1j4l1omp)
+
+![Ali Raza Solutions PageSpeed Insights mobile retest — 3 Oct 2026](../assets/case-studies/ali-raza-solutions-psi-mobile-2026-10-03.webp)
+
+![Ali Raza Solutions PageSpeed Insights desktop retest — 3 Oct 2026](../assets/case-studies/ali-raza-solutions-psi-desktop-2026-10-03.webp)
+
 ### Before optimization
 
 ![Ali Raza Solutions before GTmetrix result](../assets/case-studies/ali-raza-solutions-before.webp)
