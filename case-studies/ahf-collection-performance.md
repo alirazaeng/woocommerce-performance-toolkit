@@ -8,35 +8,37 @@ The latest supplied technical handoff is dated **30 September 2026** and covers 
 
 | Metric | Baseline | Latest confirmed / measured | Status |
 | --- | ---: | ---: | --- |
+| GTmetrix Grade | **E** | **A** | Confirmed 2 Oct 2026 |
+| GTmetrix Performance | **41%** | **99%** | Confirmed 2 Oct 2026 |
+| GTmetrix Structure | **85%** | **98%** | Confirmed 2 Oct 2026 |
+| GTmetrix LCP | **10.4s** | **0.76s** | Confirmed 2 Oct 2026 |
+| GTmetrix TBT | **346–544ms** | **76ms** | Confirmed 2 Oct 2026 |
 | PageSpeed desktop | — | **100** | Confirmed |
-| GTmetrix LCP | **10.4s** | **0.69s** | Confirmed |
-| Homepage TBT | **346–544ms** | **0ms** | Confirmed |
 | Mobile SEO | **92** | **100** | Confirmed |
 | Shop-page CLS | **0.16** | **0.012** | Confirmed |
 | Homepage compressed size | **~92 KB** | **49 KB** | Confirmed |
 | PageSpeed mobile | **68** | **88–90**; local Lighthouse run **98** | Measured range |
-| Final GTmetrix grade | **E baseline** | Final A-grade retest pending | Not yet confirmed |
 | 95+ mobile target | **68 baseline** | Pending warm-cache validation | Not yet confirmed |
 
-The report deliberately separates measured results from expected outcomes. The final GTmetrix A-grade confirmation and a 95+ mobile target still require a fresh warm-cache post-v1.7.1 retest.
+The final GTmetrix retest on **2 October 2026** confirmed the A grade. The earlier post-fix measurements of **0.69s LCP** and **0ms homepage TBT** are retained below as intermediate evidence from specific optimization steps; the table above uses the final GTmetrix retest for the end-state comparison.
 
 ## Strongest measured improvements
 
 ### Largest Contentful Paint
 
 ```text
-10.4s → 0.69s
+10.4s → 0.76s final GTmetrix retest
 ```
 
-The report attributes the largest single gain to removing a page fade-in animation that kept the hero hidden from performance measurement.
+An earlier post-fix measurement reached **0.69s**. The report attributes the largest single gain to removing a page fade-in animation that kept the hero hidden from performance measurement.
 
 ### Total Blocking Time
 
 ```text
-346–544ms → 0ms
+346–544ms → 76ms final GTmetrix retest
 ```
 
-Homepage scripts were changed to wait for the visitor's first scroll or tap, with the slider, wishlist, and category-card behavior retested.
+A targeted post-v1.6.8 homepage measurement reached **0ms TBT** after scripts were changed to wait for the visitor's first scroll or tap. The slider, wishlist, and category-card behavior were then retested.
 
 ### Shop layout stability
 
@@ -123,6 +125,8 @@ The earlier screenshot uses `www.ahfcollection.com` while the later screenshot u
 
 The strongest confirmed outcome is the reduction in frontend work before first paint and interaction while preserving the storefront's visible presentation and normal logged-in editing behavior.
 
+The **2 October 2026 GTmetrix retest confirmed Grade A, Performance 99%, Structure 98%, LCP 0.76s, TBT 76ms, and CLS 0**.
+
 The remaining infrastructure concern documented in the handoff is the origin server under load. The report recommends PHP 8.2 OPcache as the highest-value server-side follow-up.
 
-**Not claimed as confirmed here:** final GTmetrix A grade and a 95+ PageSpeed mobile result. Those remain pending until the recommended warm-cache retest is completed.
+**Not claimed as confirmed here:** a 95+ PageSpeed mobile result. That target still requires the recommended warm-cache validation.
