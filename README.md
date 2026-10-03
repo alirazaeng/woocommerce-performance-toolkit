@@ -166,25 +166,22 @@ Both captures show the same production domain, Seattle test location, Chrome 154
 
 [Read the Ali Raza Solutions case study →](case-studies/ali-raza-solutions-performance.md)
 
-### AHF Collection — WooCommerce improvement
+### AHF Collection — WooCommerce performance engineering
 
-| Metric | Earlier capture | Later capture |
+Latest confirmed technical-handoff results through theme **v1.7.1**:
+
+| Metric | Baseline | Latest confirmed / measured |
 | --- | ---: | ---: |
-| GTmetrix Grade | D | B |
-| Performance | 55% | 82% |
-| Structure | 81% | 88% |
-| LCP | 7.9 s | 2.0 s |
-| TBT | 58 ms | 35 ms |
-| CLS | 0.01 | 0 |
+| PageSpeed desktop | — | **100** |
+| GTmetrix LCP | **10.4 s** | **0.69 s** |
+| Homepage TBT | **346–544 ms** | **0 ms** |
+| Mobile SEO | **92** | **100** |
+| Shop CLS | **0.16** | **0.012** |
+| Homepage compressed size | **~92 KB** | **49 KB** |
 
-The AHF screenshots use the same Seattle location and Chrome/Lighthouse generation, but the earlier capture uses `www.ahfcollection.com` while the later capture uses `ahfcollection.com`. It is therefore presented as a documented site improvement rather than a perfectly controlled benchmark.
+The final GTmetrix A-grade confirmation and a 95+ mobile target remain explicitly marked as pending in the technical handoff. Earlier screenshot-backed D → B evidence is retained inside the case study as historical visual proof.
 
-<p>
-  <img src="assets/case-studies/ahf-collection-before.webp" alt="AHF Collection earlier GTmetrix result: Grade D, 55 percent performance, 7.9 second LCP" width="49%">
-  <img src="assets/case-studies/ahf-collection-after.webp" alt="AHF Collection later GTmetrix result: Grade B, 82 percent performance, 2.0 second LCP" width="49%">
-</p>
-
-[Read the AHF Collection case study →](case-studies/ahf-collection-performance.md)
+[Read the AHF Collection engineering case study →](case-studies/ahf-collection-performance.md)
 
 ### Additional historical benchmark
 
