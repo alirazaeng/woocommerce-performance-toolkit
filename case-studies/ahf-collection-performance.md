@@ -1,72 +1,128 @@
-# AHF Collection — WooCommerce Performance Improvement
+# AHF Collection — WooCommerce Performance Engineering
 
-This case study documents a measured GTmetrix improvement for **AHF Collection**, a WooCommerce fashion storefront.
+This case study documents the performance work completed for **AHF Collection**, a WooCommerce fashion storefront running on an Astra child theme with Cloudflare Free and a LiteSpeed host.
 
-## Result summary
+The latest supplied technical handoff is dated **30 September 2026** and covers the theme release sequence through **v1.7.1**.
 
-| Metric | Earlier capture | Later capture | Change |
-| --- | ---: | ---: | ---: |
-| GTmetrix Grade | D | B | D → B |
-| Performance | 55% | 82% | +27 points |
-| Structure | 81% | 88% | +7 points |
-| Largest Contentful Paint | 7.9s | 2.0s | -5.9s |
-| Total Blocking Time | 58ms | 35ms | -23ms |
-| Cumulative Layout Shift | 0.01 | 0 | -0.01 |
+## Latest confirmed results
 
-## Important comparison note
+| Metric | Baseline | Latest confirmed / measured | Status |
+| --- | ---: | ---: | --- |
+| PageSpeed desktop | — | **100** | Confirmed |
+| GTmetrix LCP | **10.4s** | **0.69s** | Confirmed |
+| Homepage TBT | **346–544ms** | **0ms** | Confirmed |
+| Mobile SEO | **92** | **100** | Confirmed |
+| Shop-page CLS | **0.16** | **0.012** | Confirmed |
+| Homepage compressed size | **~92 KB** | **49 KB** | Confirmed |
+| PageSpeed mobile | **68** | **88–90**; local Lighthouse run **98** | Measured range |
+| Final GTmetrix grade | **E baseline** | Final A-grade retest pending | Not yet confirmed |
+| 95+ mobile target | **68 baseline** | Pending warm-cache validation | Not yet confirmed |
 
-The earlier screenshot shows:
+The report deliberately separates measured results from expected outcomes. The final GTmetrix A-grade confirmation and a 95+ mobile target still require a fresh warm-cache post-v1.7.1 retest.
+
+## Strongest measured improvements
+
+### Largest Contentful Paint
 
 ```text
-https://www.ahfcollection.com/
+10.4s → 0.69s
 ```
 
-while the later screenshot shows:
+The report attributes the largest single gain to removing a page fade-in animation that kept the hero hidden from performance measurement.
+
+### Total Blocking Time
 
 ```text
-https://ahfcollection.com/
+346–544ms → 0ms
 ```
 
-Both captures show GTmetrix testing from **Seattle, WA, USA** using **Chrome 142 / Lighthouse 12.6.1**.
+Homepage scripts were changed to wait for the visitor's first scroll or tap, with the slider, wishlist, and category-card behavior retested.
 
-Because the hostname differs between the two screenshots, this should be treated as a documented site improvement rather than a perfectly controlled laboratory comparison.
+### Shop layout stability
 
-## Earlier capture
+```text
+0.16 → 0.012 CLS
+```
+
+The WooCommerce layout switch was moved to the top of the page instead of the bottom.
+
+### Homepage transfer size
+
+```text
+~92 KB → 49 KB
+```
+
+The v1.7.1 work replaced duplicate embedded cookie-banner logo copies with a small cached image and removed unnecessary HTML comments.
+
+## Engineering release sequence
+
+| Version | Change | Measured / intended impact |
+| --- | --- | --- |
+| **1.6.4** | Moved large CSS blocks out of each page head into cacheable files | Smaller HTML and reusable CSS |
+| **1.6.5** | Removed the page fade-in that hid the hero | **LCP 10.4s → 0.69s** |
+| **1.6.6** | Preloaded two header fonts | Earlier header-text visibility |
+| **1.6.7** | Moved WooCommerce layout switching earlier | **Shop CLS 0.16 → 0.012** |
+| **1.6.8** | Delayed homepage scripts until first interaction | **Homepage TBT → 0ms** |
+| **1.6.9** | Replaced the mobile hero with a high-priority AVIF | Faster mobile hero delivery |
+| **1.7.0** | Inlined critical first-screen CSS and deferred full stylesheets | Mobile FCP **1.8s → 1.5s**, Speed Index **4.1s → 2.6s** |
+| **1.7.1** | Reduced repeated cookie-banner assets and HTML overhead | Homepage **~92 KB → 49 KB** |
+
+Earlier optimization work also included self-hosted fonts, removal of render-blocking font stylesheets, moving jQuery to the footer, removing the WordPress emoji script, preventing cookie-banner assets from blocking rendering, and moving inline JavaScript into reusable cached files.
+
+## Edge and infrastructure work
+
+The project also included Cloudflare delivery changes designed around WooCommerce safety:
+
+- four-hour edge caching for public pages
+- cache bypass for cart, checkout, My Account, logged-in users, and visitors with cart items
+- automatic Cloudflare purge coordination
+- moving the www → non-www redirect to the edge
+- browser caching for static assets
+- Tiered Cache
+- removal of the Cloudflare Web Analytics beacon
+- HTTPS/TLS/Early Hints configuration
+- edge caching for robots.txt and sitemap
+- DNS cleanup
+
+The technical handoff reports that moving the www redirect to Cloudflare saved about **2.4 seconds** for visits arriving on the www hostname.
+
+## Resilience and rollback
+
+Performance changes were paired with fail-safe behavior rather than treated as one-way optimizations:
+
+- stale critical CSS self-disables
+- failed page trimming falls back to the original page
+- logged-in editing and the Customizer keep normal behavior
+- a rollback theme package was retained
+- a script-delay regression affecting the slider, category cards, and wishlist was corrected and retested before the optimized build remained live
+
+## Earlier GTmetrix screenshot evidence
+
+The repository also retains an earlier visual before/after sequence:
+
+| Metric | Earlier capture | Later capture |
+| --- | ---: | ---: |
+| GTmetrix Grade | D | B |
+| Performance | 55% | 82% |
+| Structure | 81% | 88% |
+| LCP | 7.9s | 2.0s |
+| TBT | 58ms | 35ms |
+| CLS | 0.01 | 0 |
+
+### Earlier capture
 
 ![AHF Collection earlier GTmetrix result](../assets/case-studies/ahf-collection-before.webp)
 
-**Observed result:** Grade D · Performance 55% · Structure 81% · LCP 7.9s · TBT 58ms · CLS 0.01
-
-## Later capture
+### Later capture
 
 ![AHF Collection later GTmetrix result](../assets/case-studies/ahf-collection-after.webp)
 
-**Observed result:** Grade B · Performance 82% · Structure 88% · LCP 2.0s · TBT 35ms · CLS 0
+The earlier screenshot uses `www.ahfcollection.com` while the later screenshot uses `ahfcollection.com`, so those two captures are retained as documented site improvement rather than presented as a perfectly controlled laboratory benchmark.
 
-## WooCommerce context
+## Current conclusion
 
-WooCommerce performance work has to preserve commerce behavior while improving rendering.
+The strongest confirmed outcome is the reduction in frontend work before first paint and interaction while preserving the storefront's visible presentation and normal logged-in editing behavior.
 
-Regression-sensitive areas include:
+The remaining infrastructure concern documented in the handoff is the origin server under load. The report recommends PHP 8.2 OPcache as the highest-value server-side follow-up.
 
-- product pages
-- cart state
-- checkout
-- customer account
-- AJAX interactions
-- session-dependent content
-- payment/shipping flows
-
-This is why the repository's optimization patterns are paired with regression-testing guidance instead of treating speed as a purely visual front-end task.
-
-## Interpretation
-
-The strongest change visible in these captures is LCP:
-
-```text
-7.9s → 2.0s
-```
-
-Performance increased by **27 points**, while TBT and CLS also improved.
-
-The result is presented with the hostname caveat above so the evidence remains transparent.
+**Not claimed as confirmed here:** final GTmetrix A grade and a 95+ PageSpeed mobile result. Those remain pending until the recommended warm-cache retest is completed.
