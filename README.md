@@ -2,6 +2,8 @@
 
 Production-focused techniques, diagnostics, and implementation patterns for improving WooCommerce storefront performance without sacrificing checkout reliability, compatibility, or maintainability.
 
+[![Code Quality](https://github.com/alirazaeng/woocommerce-performance-toolkit/actions/workflows/quality.yml/badge.svg)](https://github.com/alirazaeng/woocommerce-performance-toolkit/actions/workflows/quality.yml) [![Release](https://img.shields.io/github/v/release/alirazaeng/woocommerce-performance-toolkit?label=release)](https://github.com/alirazaeng/woocommerce-performance-toolkit/releases/latest) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 This repository is intentionally **not** a "paste every snippet into production" collection. Each optimization should be measured, tested in staging, and enabled only when it matches the store's theme, extensions, traffic profile, and critical customer flows.
 
 ## What this project demonstrates
