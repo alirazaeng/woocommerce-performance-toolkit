@@ -159,12 +159,14 @@ The repository includes real screenshot-backed performance evidence rather than 
 
 Both captures show the same production domain, Seattle test location, Chrome 154, and Lighthouse 12.6.1.
 
+**Engineering focus:** improve the critical rendering path and main-thread behavior while preserving the site's visual identity and animation-led experience.
+
 <p>
   <img src="assets/case-studies/ali-raza-solutions-before.webp" alt="Ali Raza Solutions GTmetrix before result: Grade E, 33 percent performance, 7.6 second LCP" width="49%">
   <img src="assets/case-studies/ali-raza-solutions-after.webp" alt="Ali Raza Solutions GTmetrix after result: Grade A, 92 percent performance, 1.3 second LCP" width="49%">
 </p>
 
-[Read the Ali Raza Solutions case study →](case-studies/ali-raza-solutions-performance.md)
+[Read the full Ali Raza Solutions engineering case study →](case-studies/ali-raza-solutions-performance.md)
 
 ### AHF Collection — WooCommerce performance engineering
 
