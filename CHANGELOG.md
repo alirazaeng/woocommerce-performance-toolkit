@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- expanded the Ali Raza Solutions performance case study into a full engineering narrative covering diagnosis, implementation strategy, evidence boundaries, and reusable validation workflow
+- strengthened README positioning around measured performance evidence
+- GitHub Actions checkout dependency updated to the current maintained major version
+
 All notable changes to this project will be documented here.
 
 ## [1.0.0] - 2026-09-30
