@@ -170,18 +170,21 @@ Both captures show the same production domain, Seattle test location, Chrome 154
 
 ### AHF Collection — WooCommerce performance engineering
 
-Latest confirmed technical-handoff results through theme **v1.7.1**:
+Final confirmed GTmetrix retest on **2 Oct 2026**, with additional technical-handoff measurements through theme **v1.7.1**:
 
-| Metric | Baseline | Latest confirmed / measured |
+| Metric | Baseline | Final confirmed / measured |
 | --- | ---: | ---: |
+| GTmetrix Grade | **E** | **A** |
+| GTmetrix Performance | **41%** | **99%** |
+| GTmetrix Structure | **85%** | **98%** |
+| GTmetrix LCP | **10.4 s** | **0.76 s** |
+| GTmetrix TBT | **346–544 ms** | **76 ms** |
 | PageSpeed desktop | — | **100** |
-| GTmetrix LCP | **10.4 s** | **0.69 s** |
-| Homepage TBT | **346–544 ms** | **0 ms** |
 | Mobile SEO | **92** | **100** |
 | Shop CLS | **0.16** | **0.012** |
 | Homepage compressed size | **~92 KB** | **49 KB** |
 
-The final GTmetrix A-grade confirmation and a 95+ mobile target remain explicitly marked as pending in the technical handoff. Earlier screenshot-backed D → B evidence is retained inside the case study as historical visual proof.
+The earlier **0.69s LCP** and **0ms homepage TBT** results were intermediate targeted measurements and are not presented as the final GTmetrix retest. A **95+ PageSpeed mobile** warm-cache target remains unconfirmed. Earlier D → B screenshots are retained inside the case study as historical visual proof.
 
 [Read the AHF Collection engineering case study →](case-studies/ahf-collection-performance.md)
 
